@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="bean.Dept" lazy="true" table="dept">
+        <id name="deptNo" >
+                      <generator class="sequence">
+            <param name="sequence">seq_dept</param>
+            </generator>
+        </id>
+        <property name="deptName" type="java.lang.String" column="dname"/>
+        <property name="location" type="java.lang.String">
+        	<column name="loc"></column>
+        </property>
+        <set name="emps" lazy="extra" cascade="save-update">
+        	<key column="DEPTNO"></key>
+        	<one-to-many class="bean.Emp"/>
+        </set>
+    </class>
+</hibernate-mapping>

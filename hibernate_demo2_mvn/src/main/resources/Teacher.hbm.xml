@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="bean.Teacher" >
+		<id name="id" >
+			<generator class="sequence">
+				<param name="sequence">seq_teacher</param>
+			</generator>
+		</id>
+		<property name="name" >
+		</property>
+		
+		<set name="students"  cascade="save-update"  order-by="name desc" lazy="extra">
+		    <key column="teacherid"></key>
+		    <one-to-many class="bean.Student"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

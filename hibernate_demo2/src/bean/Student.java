@@ -10,14 +10,14 @@ public class Student {
    private String name;
    
    
-   //¹ØÏµÊôĞÔ ¶Ô·½ÀàĞÍ×÷Îª×Ô¼ºÊôĞÔ
+   //å…³ç³»å±æ€§ å¯¹æ–¹ç±»å‹ä½œä¸ºè‡ªå·±å±æ€§
    private Teacher teacher;
    
    
-   //¹ØÁª¹ØÏµ ¿ÆÄ¿¼¯ºÏ
+   //å…³è”å…³ç³» ç§‘ç›®é›†åˆ
    private Set<Subject> subjects=new HashSet<Subject>();
    
-   //¹ØÏµÊôĞÔ  Ñ§ÉúÖ¤¹ØÏµ Ò»¶ÔÒ»
+   //å…³ç³»å±æ€§  å­¦ç”Ÿè¯å…³ç³» ä¸€å¯¹ä¸€
    private StudentCard card;
    
    

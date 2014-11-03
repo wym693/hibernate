@@ -10,7 +10,7 @@ public class Subject {
    private String name;
    
    
-   //¹ØÏµÊôĞÔ ¶Ô·½ÀàĞÍ×÷Îª×Ô¼ºÊôĞÔ
+   //å…³ç³»å±æ€§ å¯¹æ–¹ç±»å‹ä½œä¸ºè‡ªå·±å±æ€§
    private Set<Student> students=new HashSet<Student>();
    
    

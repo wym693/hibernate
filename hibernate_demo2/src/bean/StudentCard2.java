@@ -7,7 +7,7 @@ public class StudentCard2 {
 	private String cardNo;
 	
 	
-	//ÉèÖÃ¹ØÏµ
+	//è®¾ç½®å…³ç³»
 	private Student2 student2;
 	
 	 public StudentCard2() {

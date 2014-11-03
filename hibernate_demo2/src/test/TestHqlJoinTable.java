@@ -22,7 +22,7 @@ public class TestHqlJoinTable {
 	}
 
 	private static void leftjoin() {
-		//学生和教师的左外连接
+		//瀛︾敓鍜屾暀甯堢殑宸﹀杩炴帴
 		String hql="from Student s left join s.teacher";
 		Session session=HibernateSessionFactory.getSession();
 		

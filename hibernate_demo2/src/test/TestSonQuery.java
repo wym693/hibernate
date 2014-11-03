@@ -18,7 +18,7 @@ public class TestSonQuery {
 		
 //		querySqlQuery();
 		
-		//ÃüÃû²éÑ¯
+		//å‘½åæŸ¥è¯¢
 //		HQLNamedQurery();
 		
 		SQLNamedQuery();

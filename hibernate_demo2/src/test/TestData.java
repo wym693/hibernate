@@ -12,27 +12,27 @@ public class TestData {
 	public static void main(String[] args) {
 		
 		
-	     Emp emp1=new Emp( "ÕÅÈı");
+	     Emp emp1=new Emp( "å¼ ä¸‰");
 	     emp1.setSalary(new Double(4999));
 	     
-	     Emp emp2=new Emp( "ÀîËÄ");
+	     Emp emp2=new Emp( "æå››");
 	     
 	     emp2.setSalary(new Double(4998));
-	     Emp emp3=new Emp( "ÍõÎå");
+	     Emp emp3=new Emp( "ç‹äº”");
 	     emp3.setSalary(new Double(5001));
 	     
-	     Emp emp4=new Emp( "ÕÔÁù");
+	     Emp emp4=new Emp( "èµµå…­");
 	     emp4.setSalary(new Double(5001));
 	     
-	     Emp emp5=new Emp( "Ç®Æß");
+	     Emp emp5=new Emp( "é’±ä¸ƒ");
 	     emp5.setSalary(new Double(5000));
 	     
-	     Emp emp6=new Emp( "Íõ°Ë");
+	     Emp emp6=new Emp( "ç‹å…«");
 	     emp6.setSalary(new Double(5000));
 	     
-	     Dept shichang=new Dept("ÊĞ³¡²¿","¶«±ß");
-	     Dept caiwu=new Dept("²ÆÎñ²¿","ÖĞ²¿");
-	     Dept resource=new Dept("ÈËÊÂ²¿","Î÷±ß");
+	     Dept shichang=new Dept("å¸‚åœºéƒ¨","ä¸œè¾¹");
+	     Dept caiwu=new Dept("è´¢åŠ¡éƒ¨","ä¸­éƒ¨");
+	     Dept resource=new Dept("äººäº‹éƒ¨","è¥¿è¾¹");
 	     
 	     shichang.getEmps().add(emp1);
 	     shichang.getEmps().add(emp2);
@@ -41,7 +41,7 @@ public class TestData {
 	     resource.getEmps().add(emp5);
 	     resource.getEmps().add(emp6);
 	     
-	     //±£´æÊı¾İ
+	     //ä¿å­˜æ•°æ®
 	     
 	    Session session=HibernateSessionFactory.getSession();
 	 	Transaction tx = null;
@@ -53,7 +53,7 @@ public class TestData {
 			session.save(caiwu);
 			session.save(resource);
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			tx.rollback();

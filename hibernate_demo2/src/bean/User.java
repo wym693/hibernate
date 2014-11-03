@@ -1,6 +1,6 @@
 package bean;
 
-//Ò»¶¨ÒªĞ´Ö÷¼ü
+//ä¸€å®šè¦å†™ä¸»é”®
 public class User {
 	
 	private int id;

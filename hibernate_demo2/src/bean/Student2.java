@@ -11,7 +11,7 @@ public class Student2 {
    
    
   
-   //¹ØÏµÊôĞÔ  Ñ§ÉúÖ¤¹ØÏµ Ò»¶ÔÒ»
+   //å…³ç³»å±æ€§  å­¦ç”Ÿè¯å…³ç³» ä¸€å¯¹ä¸€
    private StudentCard2 card2;
    
    public Student2() {

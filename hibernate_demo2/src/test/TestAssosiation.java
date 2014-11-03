@@ -19,17 +19,17 @@ public class TestAssosiation {
 	public static void main(String[] args) {
 
 		/*
-		 * ¹ØÁª¹ØÏµ ÊıÁ¿¹ØÏµ
+		 * å…³è”å…³ç³» æ•°é‡å…³ç³»
 		 * 
-		 * »¥»»½Ç¶È¿´¶Ô·½
+		 * äº’æ¢è§’åº¦çœ‹å¯¹æ–¹
 		 * 
-		 * Teacher Student Õ¾ÔÚ1 ------¡· n 1 ¡¶--- Õ¾ÔÚ1 Ò»¶Ô¶à»òÕß¶à¶ÔÒ» ÀÏÊ¦ºÍÑ§Éú´æÔÚµ¥ÏòµÄÒ»¶Ô¶à¹ØÏµ
-		 * ´ú±íÁËÅäÖÃË³ĞòºÍÎ»ÖÃ ¹ØÏµ·ÅÔÚÀÏÊ¦ Ñ§ÉúºÍÀÏÊ¦´æÔÚµ¥ÏòµÄ¶à¶ÔÒ»¹ØÏµ ´ú±íÁËÅäÖÃË³ĞòºÍÎ»ÖÃ ¹ØÏµ·ÅÔÚÑ§Éú
+		 * Teacher Student ç«™åœ¨1 ------ã€‹ n 1 ã€Š--- ç«™åœ¨1 ä¸€å¯¹å¤šæˆ–è€…å¤šå¯¹ä¸€ è€å¸ˆå’Œå­¦ç”Ÿå­˜åœ¨å•å‘çš„ä¸€å¯¹å¤šå…³ç³»
+		 * ä»£è¡¨äº†é…ç½®é¡ºåºå’Œä½ç½® å…³ç³»æ”¾åœ¨è€å¸ˆ å­¦ç”Ÿå’Œè€å¸ˆå­˜åœ¨å•å‘çš„å¤šå¯¹ä¸€å…³ç³» ä»£è¡¨äº†é…ç½®é¡ºåºå’Œä½ç½® å…³ç³»æ”¾åœ¨å­¦ç”Ÿ
 		 * 
-		 * Subject java sql html Student ¶à¶Ô¶à id name
+		 * Subject java sql html Student å¤šå¯¹å¤š id name
 		 * 
 		 * 
-		 * ¶©µ¥ ÉÌÆ·µÄÖÖÀà NOT ÉÌÆ·µÄid 1---------¡·n n ---------1
+		 * è®¢å• å•†å“çš„ç§ç±» NOT å•†å“çš„id 1---------ã€‹n n ---------1
 		 * 
 		 * Student studentCard 1 1
 		 */
@@ -47,7 +47,7 @@ public class TestAssosiation {
 //		oneToOneSharedPrimaryKey();
 		
 //		setOrderbyName();
-//		setOrderbyName3();//¼¶ÁªÉ¾³ı
+//		setOrderbyName3();//çº§è”åˆ é™¤
 		
 //		setLazyAttribute();
 		
@@ -56,18 +56,18 @@ public class TestAssosiation {
 		manyToOneLazyAttribute();
 
 	}
-	//ManyToOneÑÓ³Ù¼ÓÔØ
+	//ManyToOneå»¶è¿ŸåŠ è½½
 	private static void manyToOneLazyAttribute() {
 		
 		Session session = HibernateSessionFactory.getSession();
 		
 		
 		Student zhangsan=(Student) session.get(Student.class, new Integer(1));
-		System.out.println("²éÕÒÍê±Ï");
+		System.out.println("æŸ¥æ‰¾å®Œæ¯•");
 		
 		System.out.println(zhangsan);
 		
-		System.out.println("´òÓ¡¹ØÁªÀÏÊ¦×ÊÁÏ");
+		System.out.println("æ‰“å°å…³è”è€å¸ˆèµ„æ–™");
 		System.out.println(zhangsan.getTeacher().getName());
 	    
 		
@@ -77,14 +77,14 @@ public class TestAssosiation {
 		
 		
 	}
-	//Àà¼¶±ğÑÓ³Ù¼ÓÔØ load
+	//ç±»çº§åˆ«å»¶è¿ŸåŠ è½½ load
 	private static void classLazyAttribute() {
 		
 		Session session = HibernateSessionFactory.getSession();
 		
-		//Ä¿±ê¶ÔÏóµÄ´úÀí ÒıÓÃ 
+		//ç›®æ ‡å¯¹è±¡çš„ä»£ç† å¼•ç”¨ 
 		Teacher teacher=(Teacher) session.load(Teacher.class, new Integer(13));
-		System.out.println("²éÕÒÍê±Ï");
+		System.out.println("æŸ¥æ‰¾å®Œæ¯•");
 		
 		
 		
@@ -105,17 +105,17 @@ public class TestAssosiation {
 		Teacher teacher=(Teacher) session.get(Teacher.class, new Integer(11));
 		
 		teacher.getStudents().size();
-		//×¢Òâ¹Û²ìÈÕÖ¾Êä³ö£¬¿´¿´ÓĞÃ»ÓĞ²éÕÒStudent¶ÔÏó
+		//æ³¨æ„è§‚å¯Ÿæ—¥å¿—è¾“å‡ºï¼Œçœ‹çœ‹æœ‰æ²¡æœ‰æŸ¥æ‰¾Studentå¯¹è±¡
 		
 		
 		
 		
 	}
 
-	//¼¶ÁªÉ¾³ı
+	//çº§è”åˆ é™¤
 	private static void setOrderbyName3(){
 		
-		//ÕÒ³öÀîÀÏÊ¦ËùÓĞµÄÑ§Éú²¢ÇÒÅÅĞòÊä³ö
+		//æ‰¾å‡ºæè€å¸ˆæ‰€æœ‰çš„å­¦ç”Ÿå¹¶ä¸”æ’åºè¾“å‡º
 		
 		Session session = HibernateSessionFactory.getSession();
 		
@@ -130,7 +130,7 @@ public class TestAssosiation {
 			session.delete(teacher);
 
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -151,7 +151,7 @@ public class TestAssosiation {
 	
 	private static void setOrderbyName2(){
 		
-		//ÕÒ³öÀîÀÏÊ¦ËùÓĞµÄÑ§Éú²¢ÇÒÅÅĞòÊä³ö
+		//æ‰¾å‡ºæè€å¸ˆæ‰€æœ‰çš„å­¦ç”Ÿå¹¶ä¸”æ’åºè¾“å‡º
 		
 		Session session = HibernateSessionFactory.getSession();
 		
@@ -179,9 +179,9 @@ public class TestAssosiation {
 
 		Student student6 = new Student("F");
 
-		Teacher teacher = new Teacher("ÀîÀÏÊ¦");
+		Teacher teacher = new Teacher("æè€å¸ˆ");
 
-		// ÉèÖÃÊôĞÔ£¬JavaÌí¼ÓºÃ¹ØÏµ
+		// è®¾ç½®å±æ€§ï¼ŒJavaæ·»åŠ å¥½å…³ç³»
 		teacher.getStudents().add(student1);
 		teacher.getStudents().add(student2);
 		teacher.getStudents().add(student3);
@@ -207,7 +207,7 @@ public class TestAssosiation {
 			session.save(teacher);
 
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -219,12 +219,12 @@ public class TestAssosiation {
 	}
 
 	private static void oneToOneSharedPrimaryKey() {
-		Student2 student2 = new Student2("ÀîËÄ");
+		Student2 student2 = new Student2("æå››");
 
 		StudentCard2 card2 = new StudentCard2("2013001");
 		
 		
-		//ÉèÖÃ¹ØÏµ
+		//è®¾ç½®å…³ç³»
 		student2.setCard2(card2);
 		
 		card2.setStudent2(student2);
@@ -243,7 +243,7 @@ public class TestAssosiation {
 			session.save(card2);
 
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			tx.rollback();
@@ -259,14 +259,14 @@ public class TestAssosiation {
 
 	private static void oneToOneForeignKey() {
 
-		Student student = new Student("ÀîËÄ");
+		Student student = new Student("æå››");
 
 		StudentCard card = new StudentCard("2013001");
 		
 		
 		
 
-//		 ÉèÖÃ¹ØÏµ
+//		 è®¾ç½®å…³ç³»
 		student.setCard(card);
 //		
 		card.setStudent(student);
@@ -282,7 +282,7 @@ public class TestAssosiation {
 			session.save(card);
 
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			tx.rollback();
@@ -293,21 +293,21 @@ public class TestAssosiation {
 	}
 
 	private static void manyToManyTwoWay() {
-		Student student1 = new Student("ÕÅÈı");
+		Student student1 = new Student("å¼ ä¸‰");
 
-		Student student2 = new Student("ÀîËÄ");
+		Student student2 = new Student("æå››");
 
 		Subject java = new Subject("java");
 
-		// Ñ§ÉúÉÏÓĞ¹ØÏµ
+		// å­¦ç”Ÿä¸Šæœ‰å…³ç³»
 		student1.getSubjects().add(java);
 		student2.getSubjects().add(java);
 
-		// Ä¿Ç°Ë«Ïò¶¼ÓĞ¹ØÏµ
+		// ç›®å‰åŒå‘éƒ½æœ‰å…³ç³»
 		java.getStudents().add(student1);
 		java.getStudents().add(student2);
 
-		// ¹ØÏµ³åÍ» ÈÃÆäÖĞÒ»·½·ÅÆúÎ¬»¤ÖĞ¼ä±íµÄÒåÎñ
+		// å…³ç³»å†²çª è®©å…¶ä¸­ä¸€æ–¹æ”¾å¼ƒç»´æŠ¤ä¸­é—´è¡¨çš„ä¹‰åŠ¡
 
 		Session session = HibernateSessionFactory.getSession();
 
@@ -321,7 +321,7 @@ public class TestAssosiation {
 			session.save(java);
 
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			tx.rollback();
@@ -333,13 +333,13 @@ public class TestAssosiation {
 
 	private static void manyToMany() {
 
-		Student student1 = new Student("ÕÅÈı");
+		Student student1 = new Student("å¼ ä¸‰");
 
-		Student student2 = new Student("ÀîËÄ");
+		Student student2 = new Student("æå››");
 
 		Subject java = new Subject("java");
 
-		// ÉèÖÃÊôĞÔ£¬JavaÌí¼ÓºÃ¹ØÏµ
+		// è®¾ç½®å±æ€§ï¼ŒJavaæ·»åŠ å¥½å…³ç³»
 		Subject php = new Subject("php");
 		java.getStudents().add(student1);
 		java.getStudents().add(student2);
@@ -357,7 +357,7 @@ public class TestAssosiation {
 			session.save(php);
 
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -369,13 +369,13 @@ public class TestAssosiation {
 	}
 
 	private static void oneToMany() {
-		Student student1 = new Student("ÕÅÈı");
+		Student student1 = new Student("å¼ ä¸‰");
 
-		Student student2 = new Student("ÀîËÄ");
+		Student student2 = new Student("æå››");
 
-		Teacher teacher = new Teacher("ÀîÀÏÊ¦");
+		Teacher teacher = new Teacher("æè€å¸ˆ");
 
-		// ÉèÖÃÊôĞÔ£¬JavaÌí¼ÓºÃ¹ØÏµ
+		// è®¾ç½®å±æ€§ï¼ŒJavaæ·»åŠ å¥½å…³ç³»
 		teacher.getStudents().add(student1);
 		teacher.getStudents().add(student2);
 
@@ -391,7 +391,7 @@ public class TestAssosiation {
 			session.save(teacher);
 
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -404,13 +404,13 @@ public class TestAssosiation {
 
 	private static void manyToOne() {
 
-		Student student1 = new Student("ÕÅÈı");
+		Student student1 = new Student("å¼ ä¸‰");
 
-		Student student2 = new Student("ÀîËÄ");
+		Student student2 = new Student("æå››");
 
-		Teacher teacher = new Teacher("ÀîÀÏÊ¦");
+		Teacher teacher = new Teacher("æè€å¸ˆ");
 
-		// ÉèÖÃÊôĞÔ£¬JavaÌí¼ÓºÃ¹ØÏµ
+		// è®¾ç½®å±æ€§ï¼ŒJavaæ·»åŠ å¥½å…³ç³»
 		student1.setTeacher(teacher);
 		student2.setTeacher(teacher);
 
@@ -426,7 +426,7 @@ public class TestAssosiation {
 			session.save(teacher);
 
 			tx.commit();
-			System.out.println("±£´æ³É¹¦");
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

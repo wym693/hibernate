@@ -34,7 +34,7 @@ public class TestQuery {
 	   sb.append("select new User(name ,age) from User where 1=1");
 //	   UserCondition condition =new UserCondition();
 //	   condition.setAge(25);
-//	   condition.setName("ÀîËÄ");
+//	   condition.setName("æå››");
 //	   
 //	   if(null!=condition.getAge()){
 //		   sb.append(" and age=:age ");
@@ -51,10 +51,10 @@ public class TestQuery {
 	  
 		
 		Query query=session.createQuery(sb.toString());
-		//ÉèÖÃ
+		//è®¾ç½®
 //		query.setProperties(condition);
 
-		//·ÖÒ³£¬ÏÔÊ¾µÚ¶şÒ³
+		//åˆ†é¡µï¼Œæ˜¾ç¤ºç¬¬äºŒé¡µ
 //		query.setMaxResults(3);
 //		query.setFirstResult(0);
 		
@@ -66,7 +66,7 @@ public class TestQuery {
 //		
 //		
 //		//1
-//		System.out.println("µÚÒ»ÖÖ·½Ê½");
+//		System.out.println("ç¬¬ä¸€ç§æ–¹å¼");
 		for (User user : users) {
 			System.out.println(user.getName()+"\t"+user.getId()+"\t"+user.getAge());
 		}

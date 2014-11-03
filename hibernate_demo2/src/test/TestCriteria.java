@@ -22,7 +22,7 @@ public class TestCriteria {
 		
 //		dynamicSearch();
 		
-		//·ÖÀëÊ½µÄ±ê×¼²éÕÒDetachedCriteria
+		//åˆ†ç¦»å¼çš„æ ‡å‡†æŸ¥æ‰¾DetachedCriteria
 		detachedCriteriaSearch();
 
 	}
@@ -31,19 +31,19 @@ public class TestCriteria {
 		
 		
 		DetachedCriteria dc=DetachedCriteria.forClass(Emp.class);
-		//Ä£Äâ¹¹ÔìÌõ¼ş5·ÖÖÓ
+		//æ¨¡æ‹Ÿæ„é€ æ¡ä»¶5åˆ†é’Ÿ
 		try {
-			System.out.println("´Ë´¦Ä£ÄâÍ£¶Ù3ÃëÖÓ");
+			System.out.println("æ­¤å¤„æ¨¡æ‹Ÿåœé¡¿3ç§’é’Ÿ");
 			dc.add(Restrictions.eq("empNo", new Integer(1)));
-			dc.add(Restrictions.eq("empName", "ÀîËÄ"));
+			dc.add(Restrictions.eq("empName", "æå››"));
 			
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
-		System.out.println("µ¥»÷²éÕÒ°´Å¥");
-		//Êµ¼ÊÕ¼ÓÃsession´ÓÕâÀï¿ªÊ¼
+		System.out.println("å•å‡»æŸ¥æ‰¾æŒ‰é’®");
+		//å®é™…å ç”¨sessionä»è¿™é‡Œå¼€å§‹
 		Criteria critera=dc.getExecutableCriteria(HibernateSessionFactory.getSession());
 		
 		List<Emp> emps = critera.list();
@@ -63,15 +63,15 @@ public class TestCriteria {
 		
 		EmpCondition condition=new EmpCondition();
 		condition.setEmpNo(new Integer(1));
-		condition.setEmpName("ÀîËÄ");
+		condition.setEmpName("æå››");
 		
 		Session session = HibernateSessionFactory.getSession();
-		// ±ê×¼²éÕÒ½Ó¿Ú
+		// æ ‡å‡†æŸ¥æ‰¾æ¥å£
 		Criteria criteria = session.createCriteria(Emp.class);
 		
-		//´Ë´¦¹¹ÔìÕ¼ÓÃ5·ÖÖÓ
+		//æ­¤å¤„æ„é€ å ç”¨5åˆ†é’Ÿ
 		
-		//¶¯Ì¬¼ÓÌõ¼ş
+		//åŠ¨æ€åŠ æ¡ä»¶
 		if(null!=condition.getEmpNo()){
 			criteria.add(Restrictions.eq("empNo", condition.getEmpNo()));
 		}
@@ -98,9 +98,9 @@ public class TestCriteria {
 	private static void simpleDemo() {
 
 		Session session = HibernateSessionFactory.getSession();
-		// ±ê×¼²éÕÒ½Ó¿Ú
+		// æ ‡å‡†æŸ¥æ‰¾æ¥å£
 		Criteria criteria = session.createCriteria(Emp.class);
-		//·ÖÒ³²éÕÒ
+		//åˆ†é¡µæŸ¥æ‰¾
 		criteria.setMaxResults(2);
 		criteria.setFirstResult(2);
 
@@ -116,24 +116,24 @@ public class TestCriteria {
 	private static void demo1() {
 
 		Session session = HibernateSessionFactory.getSession();
-		// ±ê×¼²éÕÒ½Ó¿Ú
+		// æ ‡å‡†æŸ¥æ‰¾æ¥å£
 //		Criteria criteria = session.createCriteria(Emp.class);
-//		//Ìí¼ÓÌõ¼ş
+//		//æ·»åŠ æ¡ä»¶
 //		criteria.add(Restrictions.eq("empNo", new Integer(1)));
-//		//Ìí¼ÓÌõ¼ş2
-//		criteria.add(Restrictions.eq("empName", "ÕÅÈı"));
-		//Ìí¼ÓÌõ¼ş3Ä£ºı
-//		criteria.add(Restrictions.like("empName", "Àî%"));
+//		//æ·»åŠ æ¡ä»¶2
+//		criteria.add(Restrictions.eq("empName", "å¼ ä¸‰"));
+		//æ·»åŠ æ¡ä»¶3æ¨¡ç³Š
+//		criteria.add(Restrictions.like("empName", "æ%"));
 		
-		//Ìõ¼ş4 ´óÓÚ
+		//æ¡ä»¶4 å¤§äº
 //		criteria.add(Restrictions.gt("salary", new Double(5000)));
 		
-		//Ö§³ÖÁ´Ê½·ç¸ñ
+		//æ”¯æŒé“¾å¼é£æ ¼
 		Criteria criteria=session.createCriteria(Emp.class)
 		.addOrder(Order.asc("empName"));
 		
 //		.add(Restrictions.eq("empNo", new Integer(1)))
-//		.add(Restrictions.eq("empName", "ÕÅÈı"));
+//		.add(Restrictions.eq("empName", "å¼ ä¸‰"));
 		
 		
 		List<Emp> emps = criteria.list();
@@ -149,7 +149,7 @@ public class TestCriteria {
 		Session session = HibernateSessionFactory.getSession();
 		Criteria criteria=session.createCriteria(Emp.class);
 		Criteria criteria2=criteria.createCriteria("dept");
-		         criteria2.add(Restrictions.eq("deptName", "²ÆÎñ²¿"));
+		         criteria2.add(Restrictions.eq("deptName", "è´¢åŠ¡éƒ¨"));
 		         
 		
 		

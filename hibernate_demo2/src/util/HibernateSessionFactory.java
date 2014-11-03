@@ -9,13 +9,13 @@ public class HibernateSessionFactory {
 
     
     private static String CONFIG_FILE_LOCATION = "/hibernate.cfg.xml";
-    //¸øÏß³Ì°ó¶¨Ò»¸öSession ±ÈÀà¼¶±ğ¸ü¼Ó°²È«
+    //ç»™çº¿ç¨‹ç»‘å®šä¸€ä¸ªSession æ¯”ç±»çº§åˆ«æ›´åŠ å®‰å…¨
 	private static final ThreadLocal threadLocal = new ThreadLocal();
     private  static Configuration configuration = new Configuration();    
     private static org.hibernate.SessionFactory sessionFactory;
     private static String configFile = CONFIG_FILE_LOCATION;
 
-    //ÔËĞĞÒ»´Î ÏÈÓÚÀà¹¹Ôì·½·¨Íê³É  ÄÚ´æ¼Ä´æÆ÷Î»ÖÃ
+    //è¿è¡Œä¸€æ¬¡ å…ˆäºç±»æ„é€ æ–¹æ³•å®Œæˆ  å†…å­˜å¯„å­˜å™¨ä½ç½®
 	static {
     	try {
 			configuration.configure(configFile);
@@ -29,7 +29,7 @@ public class HibernateSessionFactory {
     private HibernateSessionFactory() {
     }
 	
-	//»ñµÃÁ¬½Ó
+	//è·å¾—è¿æ¥
     
     public static Session getSession() throws HibernateException {
         Session session = (Session) threadLocal.get();
@@ -61,7 +61,7 @@ public class HibernateSessionFactory {
 		}
 	}
 
-	//¹Ø±Õ×ÊÔ´
+	//å…³é—­èµ„æº
     public static void closeSession() throws HibernateException {
         Session session = (Session) threadLocal.get();
         threadLocal.set(null);

@@ -27,7 +27,7 @@ public class TestQueryCache {
 //		String hql="from Student";
 //		Query query=session.createQuery(hql);
 //		
-//		//设置使用缓存存储结果
+//		//璁剧疆浣跨敤缂撳瓨瀛樺偍缁撴灉
 //		query.setCacheable(true);
 //		
 //		List<Student> students=query.list();
@@ -36,7 +36,7 @@ public class TestQueryCache {
 //			System.out.println(student.getId()+" "+student.getName());
 //		}
 //		HibernateSessionFactory.closeSession();
-//		System.out.println("对比第二次有没有发出新的语句");
+//		System.out.println("瀵规瘮绗簩娆℃湁娌℃湁鍙戝嚭鏂扮殑璇彞");
 //		session=HibernateSessionFactory.getSession();
 //		
 //	
@@ -53,7 +53,7 @@ public class TestQueryCache {
 		String hql="from Teacher";
 		Query query=session.createQuery(hql);
 		
-		//设置使用缓存存储结果
+		//璁剧疆浣跨敤缂撳瓨瀛樺偍缁撴灉
 		query.setCacheable(true);
 		
 		List<Teacher> teachers=query.list();
@@ -62,7 +62,7 @@ public class TestQueryCache {
 			System.out.println(teacher.getName());
 		}
 		HibernateSessionFactory.closeSession();
-		System.out.println("对比第二次有没有发出新的语句");
+		System.out.println("瀵规瘮绗簩娆℃湁娌℃湁鍙戝嚭鏂扮殑璇彞");
 		session=HibernateSessionFactory.getSession();
 		
 	

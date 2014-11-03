@@ -29,15 +29,15 @@ public class TestEhCache {
 		
 		session.close();
 		
-		//ĞÂµÄSession ºÍÉÏÃæµÄ²»ÔÚÍ¬Ò»¸ösession¿Õ¼äÖĞ
+		//æ–°çš„Session å’Œä¸Šé¢çš„ä¸åœ¨åŒä¸€ä¸ªsessionç©ºé—´ä¸­
 		session=HibernateSessionFactory.getSession();
-		System.out.println("¶Ô±ÈÊÇ·ñ²éÕÒ?ÓĞÃ»ÓĞ·¢³öĞÂµÄÓï¾ä");
+		System.out.println("å¯¹æ¯”æ˜¯å¦æŸ¥æ‰¾?æœ‰æ²¡æœ‰å‘å‡ºæ–°çš„è¯­å¥");
 		
 //		Student student2=(Student) session.get(Student.class, new Integer(12));
 		Teacher teacher2=(Teacher) session.get(Teacher.class, new Integer(12));
 		
 		
-//		System.out.println("µØÖ·±È½Ï"+(student1==student2));
+//		System.out.println("åœ°å€æ¯”è¾ƒ"+(student1==student2));
 		System.out.println(teacher1);
 		System.out.println(teacher2);
 		
@@ -51,14 +51,14 @@ public class TestEhCache {
 //		try {
 //			tx=session.beginTransaction();
 //			
-//			System.out.println("¸üĞÂÇ°");
+//			System.out.println("æ›´æ–°å‰");
 //			System.out.println(teacher.getId()+"\t"+teacher.getName());
 //			
-//			teacher.setName("ÍõÀÏÊ¦");
+//			teacher.setName("ç‹è€å¸ˆ");
 //			session.update(teacher);
 //			
 //			
-//			teacher.setName("³ÂÀÏÊ¦");
+//			teacher.setName("é™ˆè€å¸ˆ");
 //			session.update(teacher);
 //			
 //			tx.commit();

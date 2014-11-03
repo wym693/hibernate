@@ -2,9 +2,9 @@ package bean;
 
 public class EmpCondition {
 	
-	//员工编号
+	//鍛樺伐缂栧彿
 	private Integer empNo;
-	//员工姓名
+	//鍛樺伐濮撳悕
 	private String empName;
 	
 	

@@ -18,9 +18,9 @@ public class TestComponent {
 	private static void add() {
 		
 		
-	     StudentMain main=new StudentMain("李四");
+	     StudentMain main=new StudentMain("鏉庡洓");
 	     
-	     Address home=new Address("广州天河","020-888833333","mayun@yahoo.com");
+	     Address home=new Address("骞垮窞澶╂渤","020-888833333","mayun@yahoo.com");
 	     
 	     main.setAddress(home);
 	     home.setStudentMain(main);
@@ -40,7 +40,7 @@ public class TestComponent {
 			
 
 				tx.commit();
-				System.out.println("保存成功");
+				System.out.println("淇濆瓨鎴愬姛");
 			} catch (HibernateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

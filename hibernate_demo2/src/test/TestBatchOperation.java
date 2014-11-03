@@ -31,16 +31,16 @@ public class TestBatchOperation {
 
 	private static void jdbcApi() {
 		Session session=HibernateSessionFactory.getSession();
-			//Ò»Ïî¹¤×÷
+			//ä¸€é¡¹å·¥ä½œ
 		Work work=new Work() {
 			
 			public void execute(Connection conn) throws SQLException {
-				//jdbcÀ´ÊµÏÖ
-				String sql="update STUDENT s set s.name='ÕÅÈıjdbc'  where s.id=12";
+				//jdbcæ¥å®ç°
+				String sql="update STUDENT s set s.name='å¼ ä¸‰jdbc'  where s.id=12";
 				
 				PreparedStatement prst=conn.prepareStatement(sql);
 				int count=prst.executeUpdate();
-				System.out.println("Ö´ĞĞÊıÁ¿"+count);
+				System.out.println("æ‰§è¡Œæ•°é‡"+count);
 				
 			}
 		};
@@ -49,12 +49,12 @@ public class TestBatchOperation {
 		try {
 			tx=session.beginTransaction();
 		
-		//ÓÉsessionÖ´ĞĞ¹¤×÷
+		//ç”±sessionæ‰§è¡Œå·¥ä½œ
 		session.doWork(work);
-		System.out.println("Íê±Ï");
+		System.out.println("å®Œæ¯•");
 		
-			tx.commit();//ÒşÊ½µ÷ÓÃË¢ĞÂ·½·¨
-			System.out.println("±£´æ³É¹¦");
+			tx.commit();//éšå¼è°ƒç”¨åˆ·æ–°æ–¹æ³•
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			tx.rollback();
@@ -80,8 +80,8 @@ public class TestBatchOperation {
 			tx=session.beginTransaction();
 			
 			session.createQuery(hql).executeUpdate();
-			tx.commit();//ÒşÊ½µ÷ÓÃË¢ĞÂ·½·¨
-			System.out.println("±£´æ³É¹¦");
+			tx.commit();//éšå¼è°ƒç”¨åˆ·æ–°æ–¹æ³•
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			tx.rollback();

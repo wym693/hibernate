@@ -21,7 +21,7 @@ public class TestBigObject {
 		Session session = null;
 		Transaction tx = null;
 		try {
-			// ¶ÁÈëÀàÂ·¾¶ÏÂµÄfile.txtÎÄ¼şµÄ¶ş½øÖÆÊı¾İ
+			// è¯»å…¥ç±»è·¯å¾„ä¸‹çš„file.txtæ–‡ä»¶çš„äºŒè¿›åˆ¶æ•°æ®
 			InputStream in = new FileInputStream(new File("C:/Users/wen/Desktop/123.txt"));
 			byte[] byteArray = new byte[in.available()];
 			in.read(byteArray);
@@ -30,7 +30,7 @@ public class TestBigObject {
 			session = HibernateSessionFactory.getSession();
 			tx = session.beginTransaction();
 			Bigobject_1 bigObj = new Bigobject_1(32);
-			bigObj.setTclob("²âÊÔ´óÎÄ±¾");
+			bigObj.setTclob("æµ‹è¯•å¤§æ–‡æœ¬");
 			bigObj.setTblob(byteArray);
 			session.save(bigObj);
 			tx.commit();
@@ -39,7 +39,7 @@ public class TestBigObject {
 			if (tx != null)
 				tx.rollback();
 		} finally {
-			// ¹Ø±Õsession
+			// å…³é—­session
 			HibernateSessionFactory.closeSession();
 		}
 		
@@ -50,8 +50,8 @@ public class TestBigObject {
 			Session session = null;
 			Transaction tx = null;
 			try {
-				// ¶ÁÈëÀàÂ·¾¶ÏÂµÄfile.txtÎÄ¼şµÄ¶ş½øÖÆÊı¾İ
-				InputStream in = new FileInputStream(new File("C:/Users/wen/Desktop/GitÈ¨ÍşÖ¸ÄÏ.pdf"));
+				// è¯»å…¥ç±»è·¯å¾„ä¸‹çš„file.txtæ–‡ä»¶çš„äºŒè¿›åˆ¶æ•°æ®
+				InputStream in = new FileInputStream(new File("C:/Users/wen/Desktop/Gitæƒå¨æŒ‡å—.pdf"));
 				
 				
 				
@@ -62,8 +62,8 @@ public class TestBigObject {
 				session = HibernateSessionFactory.getSession();
 				tx = session.beginTransaction();
 				Bigobject_2 obj = new Bigobject_2(30);
-				obj.setTblob(Hibernate.createBlob(in));//ÒÀ¾İ¶ş½øÖÆÊı¾İ´´½¨Ò»¸öBlob¶ÔÏó
-				obj.setTclob(Hibernate.createClob("²âÊÔ´óÎÄ±¾"));//ÒÀ¾İ×Ö·û´®¶ÔÏó´´½¨Ò»¸öClob¶ÔÏó
+				obj.setTblob(Hibernate.createBlob(in));//ä¾æ®äºŒè¿›åˆ¶æ•°æ®åˆ›å»ºä¸€ä¸ªBlobå¯¹è±¡
+				obj.setTclob(Hibernate.createClob("æµ‹è¯•å¤§æ–‡æœ¬"));//ä¾æ®å­—ç¬¦ä¸²å¯¹è±¡åˆ›å»ºä¸€ä¸ªClobå¯¹è±¡
 				session.save(obj);
 				tx.commit();
 			} catch (Exception e) {
@@ -71,7 +71,7 @@ public class TestBigObject {
 				if (tx != null)
 					tx.rollback();
 			} finally {
-				// ¹Ø±Õsession
+				// å…³é—­session
 				HibernateSessionFactory.closeSession();
 			}
 	}

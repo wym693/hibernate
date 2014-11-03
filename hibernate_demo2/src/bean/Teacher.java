@@ -3,7 +3,7 @@ package bean;
 import java.util.HashSet;
 import java.util.Set;
 
-//ÀÏÊ¦1  n List Map Set
+//è€å¸ˆ1  n List Map Set
 public class Teacher {
 
 	private int id;

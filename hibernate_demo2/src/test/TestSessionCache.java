@@ -34,14 +34,14 @@ public class TestSessionCache {
 		try {
 			tx=session.beginTransaction();
 			
-			System.out.println("¸üĞÂÇ°");
+			System.out.println("æ›´æ–°å‰");
 			System.out.println(teacher.getId()+"\t"+teacher.getName());
 			
-			teacher.setName("ÍõÀÏÊ¦");
+			teacher.setName("ç‹è€å¸ˆ");
 			session.update(teacher);
 			
 			
-			teacher.setName("³ÂÀÏÊ¦");
+			teacher.setName("é™ˆè€å¸ˆ");
 			session.update(teacher);
 			
 			tx.commit();

@@ -25,7 +25,7 @@ public class TestUser {
 		
 		Session session= HibernateSessionFactory.getSession();
 		
-		User user=new User("ÀîËÄ2014",25,1.73);
+		User user=new User("æå››2014",25,1.73);
 //		user.setId(4);
 		
 		
@@ -35,16 +35,16 @@ public class TestUser {
 			tx=session.beginTransaction();
 			
 			session.save(user);
-			//evit()ÌŞ³ısesion»º´æÀïÃæµÄ¶ÔÏó
+			//evit()å‰”é™¤sesionç¼“å­˜é‡Œé¢çš„å¯¹è±¡
 //			session.evict(user);
-			//±£´æÍê±Ïºó£¬ÔÙÉèÖÃĞÂµÄÊôĞÔÖµ£¬±ä³ÉÔà¶ÔÏó
-//			session.flush();//·¢³ö¸üĞÂ¶ÔÏó×´Ì¬ Ã»ÓĞÌá½»¹¦ÄÜ
+			//ä¿å­˜å®Œæ¯•åï¼Œå†è®¾ç½®æ–°çš„å±æ€§å€¼ï¼Œå˜æˆè„å¯¹è±¡
+//			session.flush();//å‘å‡ºæ›´æ–°å¯¹è±¡çŠ¶æ€ æ²¡æœ‰æäº¤åŠŸèƒ½
 			
 			
 			
 			
-			tx.commit();//ÒşÊ½µ÷ÓÃË¢ĞÂ·½·¨
-			System.out.println("±£´æ³É¹¦");
+			tx.commit();//éšå¼è°ƒç”¨åˆ·æ–°æ–¹æ³•
+			System.out.println("ä¿å­˜æˆåŠŸ");
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			tx.rollback();

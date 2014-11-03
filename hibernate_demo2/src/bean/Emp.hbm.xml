@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="bean.Emp" table="emp">
+        <id name="empNo" column="empno" type="java.lang.Integer">
+            <generator class="sequence">
+            <param name="sequence">seq_emp</param>
+            </generator>
+        </id>
+        <property name="empName" type="java.lang.String" column="ename"/>
+        <property name="job" type="java.lang.String" column="job"/>
+        <property name="salary" type="java.lang.Double" column="sal"/>
+        <property name="hireDate" type="java.util.Date"/>
+        <many-to-one 
+        	name="dept" 
+        	column="DEPTNO" 
+        	class="bean.Dept" />
+    </class>
+    
+    
+    <query name="findEmpByEmpNo">
+    <![CDATA[
+    	from Emp e where e.empNo = :empno
+    ]]>
+    </query>
+    <sql-query name="selectEmpByEmpNo">
+    	<return alias="e" class="bean.Emp"/>
+    	select {e.*} from EMP e where  e.EMPNO = :empno
+    </sql-query>
+    
+    
+    
+    
+    
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="bean.StudentMain">
+		<id name="id">
+			<generator class="sequence">
+				<param name="sequence">seq_studentmain</param>
+			</generator>
+		</id>
+		<property name="name">
+		</property>
+		
+		<component name="address" class="bean.Address"  update="true">
+		  <parent name="studentMain"/>
+		   <property name="phone" ></property> 
+		   <property name="email" ></property> 
+		   <property name="address" ></property> 
+		</component>
+		
+		
+
+
+
+
+
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+
+	<property name="connection.driver_class">
+		oracle.jdbc.driver.OracleDriver
+	</property>
+	<property name="connection.url">
+		jdbc:oracle:thin:@localhost:1521:ORCLWEN
+	</property>
+	<property name="connection.username">zs</property>
+	<property name="connection.password">12345</property>
+	<property name="show_sql">true</property>
+	<property name="dialect">
+		org.hibernate.dialect.Oracle10gDialect
+	</property>
+	<property name="hbm2ddl.auto">update</property>
+	<property name="cache.use_second_level_cache">true</property>
+	<property name="cache.provider_class">
+		net.sf.ehcache.hibernate.EhCacheProvider
+	</property>
+	<property name="cache.use_query_cache">true</property>
+	<mapping resource="bean/User.hbm.xml" />
+	<mapping resource="bean/Student.hbm.xml" />
+	<mapping resource="bean/Teacher.hbm.xml" />
+	<mapping resource="bean/Subject.hbm.xml" />
+	<mapping resource="bean/StudentCard.hbm.xml" />
+	<mapping resource="bean/Student2.hbm.xml" />
+	<mapping resource="bean/StudentCard2.hbm.xml" />
+	<mapping resource="bean/StudentMain.hbm.xml" />
+	<mapping resource="bean/Dept.hbm.xml" />
+	<mapping resource="bean/Emp.hbm.xml" />
+	<mapping resource="bean/Bigobject_1.hbm.xml" />
+	<mapping resource="bean/Bigobject_2.hbm.xml" />
+	<class-cache usage="read-only" class="bean.Student"
+		region="sampleCache1" />
+
+</session-factory>
+
+</hibernate-configuration>

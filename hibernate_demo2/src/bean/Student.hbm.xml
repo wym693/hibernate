@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="bean.Student">
+	   <cache usage="read-write"/>
+		<id name="id">
+			<generator class="sequence">
+				<param name="sequence">seq_student</param>
+			</generator>
+		</id>
+		<property name="name">
+		</property>
+		<many-to-one name="teacher" class="bean.Teacher" column="teacherid" lazy="proxy"  outer-join="true"></many-to-one>
+		<set name="subjects" table="subject_student">
+			<key column="studentid" />
+			<many-to-many class="bean.Subject" column="subjectid"></many-to-many>
+		</set>
+		<many-to-one name="card" class="bean.StudentCard" column="cardid" 
+			unique="true"></many-to-one>
+			
+			
+
+
+
+
+
+
+
+
+	</class>
+</hibernate-mapping>

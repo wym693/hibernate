@@ -9,24 +9,38 @@ import org.hibernate.annotations.CascadeType;
 
 public class MovieCondition {
 	
-	private Integer id;
+
+
 	private String titile;
 	private String director;
 	private String actor;
-	private Double price;
+	private Double minPrice;
+	private Double maxPrice;
+	
 	private Type   type;
 	
+	
+	
+	
+	public MovieCondition(String titile, String director, String actor,
+			Double minPrice, Double maxPrice, Type type) {
+		this.titile = titile;
+		this.director = director;
+		this.actor = actor;
+		this.minPrice = minPrice;
+		this.maxPrice = maxPrice;
+		this.type = type;
+	}
+
+
+
+
 	public MovieCondition() {
 	}
 	
 	
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	public String getTitile() {
 		return titile;
 	}
@@ -45,17 +59,36 @@ public class MovieCondition {
 	public void setActor(String actor) {
 		this.actor = actor;
 	}
-	public Double getPrice() {
-		return price;
-	}
-	public void setPrice(Double price) {
-		this.price = price;
-	}
+
 	public Type getType() {
 		return type;
 	}
 	public void setType(Type type) {
 		this.type = type;
+	}
+
+
+
+	public Double getMinPrice() {
+		return minPrice;
+	}
+
+
+
+	public void setMinPrice(Double minPrice) {
+		this.minPrice = minPrice;
+	}
+
+
+
+	public Double getMaxPrice() {
+		return maxPrice;
+	}
+
+
+
+	public void setMaxPrice(Double maxPrice) {
+		this.maxPrice = maxPrice;
 	}
 	
 	

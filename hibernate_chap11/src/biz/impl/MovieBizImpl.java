@@ -25,24 +25,27 @@ public class MovieBizImpl implements MovieBiz {
 		return typeDao.getAll();
 		
 	}
-	
-	
-	
 
 	public void addMovie(Movie movie) throws HibernateException {
 		movieDao.save(movie);
-		    
-		
-		
-		
-
 	}
 
 	public List<Movie> searchMovie(MovieCondition condition)
 			throws HibernateException {
-		movieDao.searchByCondition(condition);
+		return movieDao.searchByCondition(condition);
 		
-		return null;
+		
+	}
+	
+	//根据id查找Type
+	public Type getTypeById(int id) throws HibernateException{
+		return typeDao.getTypeById(id);
+	}
+
+
+
+	public List<Movie> getAllMovie() throws HibernateException {
+		return movieDao.getAll();
 	}
 
 }

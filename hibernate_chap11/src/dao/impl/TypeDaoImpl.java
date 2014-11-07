@@ -28,4 +28,21 @@ public class TypeDaoImpl implements TypeDao{
 		return types;
 	}
 
+	public Type getTypeById(int id) throws HibernateException {
+		Type type=null;
+		
+		String hql="from Type where id=:id";
+		
+		Session session=HibernateSessionFactory.getSession();
+		
+		Query query=session.createQuery(hql);
+		query.setInteger("id", id);
+		
+		type=(Type) query.uniqueResult();
+		HibernateSessionFactory.closeSession();
+		
+		return type;
+		
+	}
+
 }

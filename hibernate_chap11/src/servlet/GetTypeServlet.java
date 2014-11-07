@@ -31,7 +31,7 @@ public class GetTypeServlet extends HttpServlet {
 		
 	       //设置编码
 		request.setCharacterEncoding("utf-8");
-		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		
 		List<Type> types=movieBiz.getAllType();
 		

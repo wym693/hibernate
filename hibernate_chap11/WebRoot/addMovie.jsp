@@ -24,14 +24,14 @@
 	</head>
 
 	<body>
-	<form action="addMovie">
+	<form action="addMovie"  method="post">
 		<table align="center">
 			<tr>
 				<td>
 					电影名称
 				</td>
 				<td>
-					<input type="input" name="name" />
+					<input type="input" name="name"  value="冰河世界4"/>
 				</td>
 			</tr>
 
@@ -56,7 +56,7 @@
 					主演
 				</td>
 				<td>
-					<input type="input" name="actor" />
+					<input type="input" name="actor" value="猛犸象和树懒"/>
 				</td>
 			</tr>
 
@@ -67,7 +67,7 @@
 					导演
 				</td>
 				<td>
-					<input type="input" name="director" />
+					<input type="input" name="director" value="梦工厂" />
 				</td>
 			</tr>
 
@@ -77,7 +77,7 @@
 					价格
 				</td>
 				<td>
-					<input type="input" name="price" />
+					<input type="input" name="price" value="35" />
 				</td>
 			</tr>
 

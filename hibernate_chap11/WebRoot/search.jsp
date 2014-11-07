@@ -21,24 +21,101 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
   </head>
+  <%
+     MovieBiz movieBiz=new MovieBizImpl();
+  
+     List<Type> types=movieBiz.getAllType();
+		
+		//绑定Type
+		request.setAttribute("types", types);
+		
+   		
+	
+  
+  
+   %>
+
+  
+  
   
   <body>
      <a href="getTypes">添加电影</a>
       <a href="search.jsp">查找电影</a>
-      
-      
+     <a href="index.jsp">首页</a>
      
-     <%
-        MovieBiz mb=new MovieBizImpl();
-        
-        List<Movie> movies=mb.getAllMovie();
-        
-       // out.print("movies的长度是"+movies.size());
-        request.setAttribute("movies",movies);
-     
-      %>
+     <h1>${requestScope.movies}</h1>
+    
       
+  <form action="searchMovie"  method="post">
+		<table align="center">
+			<tr>
+				<td>
+					电影名称
+				</td>
+				<td>
+					<input type="input" name="name"  value="冰河世界4"/>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					电影类型
+				</td>
+				<td>
+					<select name="typeid">
+						<c:forEach items="${types}" var="type">
+							<option value="${type.id}">
+								${type.name}
+							</option>
+						</c:forEach>
+					</select>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td>
+					主演
+				</td>
+				<td>
+					<input type="input" name="actor" value="猛犸象和树懒"/>
+				</td>
+			</tr>
+
+
+
+			<tr>
+				<td>
+					导演
+				</td>
+				<td>
+					<input type="input" name="director" value="梦工厂" />
+				</td>
+			</tr>
+
+
+			<tr>
+				<td>
+					价格
+				</td>
+				<td>
+					<input type="input" name="minPrice" value="35" />&nbsp;&nbsp;&nbsp;<input type="input" name="maxPrice" value="50" />
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="提交" />
+				</td>
+			</tr>
+
+
+
+		</table>
+
+    </form>    
    
+      
   
       
       

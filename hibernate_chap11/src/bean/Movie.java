@@ -39,6 +39,19 @@ public class Movie {
 	private Type   type;
 	
 	
+	public Movie() {
+	}
+	
+
+	public Movie(String titile, String director, String actor,
+			Double price, Type type) {
+		this.titile = titile;
+		this.director = director;
+		this.actor = actor;
+		this.price = price;
+		this.type = type;
+	}
+
 
 	public int getId() {
 		return id;

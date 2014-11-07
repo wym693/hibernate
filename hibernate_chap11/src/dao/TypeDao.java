@@ -13,6 +13,10 @@ public interface TypeDao {
 	//查找全部
 	public List<Type>  getAll() throws HibernateException;
 	
+	//根据类型id获取Type
+	public Type getTypeById(int id)throws HibernateException;
+	
+	
 	
 
 }

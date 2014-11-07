@@ -20,11 +20,22 @@
   
   <servlet>
      <servlet-name>addMovie</servlet-name>
-     <servlet-class>servlet.AddMovieServlet</servlet-class>
+     <servlet-class>servlet.SaveMovieServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
        <servlet-name>addMovie</servlet-name>
       <url-pattern>/addMovie</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+     <servlet-name>searchMovie</servlet-name>
+     <servlet-class>servlet.SearchMovieServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+       <servlet-name>searchMovie</servlet-name>
+      <url-pattern>/searchMovie</url-pattern>
   </servlet-mapping>
 </web-app>
